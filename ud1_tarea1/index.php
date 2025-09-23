@@ -21,11 +21,11 @@
                                     <h2 class="fw-bold mb-2 text-uppercase">Bienvenido</h2>
                                     <p class="text-white-50 mb-5">Por favor, introduzca usuario y contraseña:</p>
                                     <div data-mdb-input-init class="form-outline form-white mb-4">
-                                        <input type="text" id="typeEmailX" class="form-control form-control-lg" name="user" placeholder="introduce usuario" />
+                                        <input type="text" id="typeEmailX" class="form-control form-control-lg" name="user" placeholder="introduce usuario" required/>
                                         <label class="form-label" for="typeEmailX">Usuario</label>
                                     </div>
                                     <div data-mdb-input-init class="form-outline form-white mb-4">
-                                        <input type="password" id="typePasswordX" class="form-control form-control-lg" name="pass" placeholder="introduce contraseña" />
+                                        <input type="password" id="typePasswordX" class="form-control form-control-lg" name="pass" placeholder="introduce contraseña" required/>
                                         <label class="form-label" for="typePasswordX">Contraseña</label>
                                     </div>
                                     <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="mailto:admin_julio@admin.com">¿Clave olvidada?</a></p>

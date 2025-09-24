@@ -18,10 +18,10 @@
                         <div class="card bg-dark text-white" style="border-radius: 1rem;">
                             <div class="card-body p-5 text-center">
                                 <h2 class="fw-bold mb-2 text-uppercase">Bienvenido</h2>
-                                <p class="text-white-50 mb-5">Introduzca las 3 notas a calcular:</p>
+                                <p class="text-white-50 mb-5">Introduzca información del viajero:</p>
                                 <div data-mdb-input-init class="form-outline form-white mb-4">
-                                    <label class="form-label" for="nota_1">Primera Nota</label>
-                                    <input type="number" min="0" max="10" step="0.01" id="nota_1" class="form-control form-control-lg" name="nota1" placeholder="Nota 1" required />
+                                    <label class="form-label" for="preciob">Precio del billete</label>
+                                    <input type="number" min="0.01" step="0.01" id="preciob" class="form-control form-control-lg" name="precio" placeholder="Precio del billete" required />
                                     <label class="form-label" for="nota_2">Segunda Nota</label>
                                     <input type="number" min="0" max="10" step="0.01" id="nota_2" class="form-control form-control-lg" name="nota2" placeholder="Nota 2" required />
                                     <label class="form-label" for="nota_3">Tercera Nota</label>

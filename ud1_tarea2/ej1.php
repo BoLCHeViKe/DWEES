@@ -32,15 +32,34 @@
                                 if (isset($_REQUEST['enviar'])) { //Formulario principal
                                     $mifigura = $_REQUEST['figura'];
                                     echo '<p class="text-white-50 mb-5">Ha seleccionado ' . ucfirst($mifigura) . '</p>';
-                                    if ($mifigura == "triangle") {
-                                        ask_triangle(); //Recoge datos de triangulo
+                                    switch ($mifigura) {
+                                        case 'square':
+                                            ask_figure_one_parameter($mifigura,"lado"); //Recoge datos del cuadrado
+                                            break;
+                                        case 'circle':
+                                            ask_figure_one_parameter($mifigura,"radio"); //Recoge datos del circulo
+                                            break;
+                                        case 'triangle':
+                                            ask_triangle(); //Recoge datos de triangulo
+                                            break;
+                                        
+
                                     }
+                                    
                                 }
-                                if (isset($_REQUEST['enviar_tri'])) {
+                                if (isset($_REQUEST['enviar_triangle'])) {
                                     $tri_base = $_REQUEST['base'];
                                     $tri_altura = $_REQUEST['altura'];
-                                    echo '<p class="text-white-50 mb-5">El área de un triangulo con '.$tri_base." cm de base y "."$tri_altura"." cm de altura son:". '</p>';
-                                    echo '<h2 class="fw-bold mb-2">'.calc_area_tri($tri_base,$tri_altura)." cm".'</h2>';
+                                    echo '<p class="text-white-50 mb-5">El área de un triangulo con ' . $tri_base . " cm de base y " . "$tri_altura" . " cm de altura son:" . '</p>';
+                                    echo '<h2 class="fw-bold mb-2">' . calc_area_tri($tri_base, $tri_altura) . " cm" . '</h2>';
+                                } elseif (isset($_REQUEST['enviar_square'])) {
+                                    $squa_lado = $_REQUEST['lado'];
+                                    echo '<p class="text-white-50 mb-5">El área de un cuadrado con ' . $squa_lado . " cm de lado son:" . '</p>';
+                                    echo '<h2 class="fw-bold mb-2">' . calc_area_squ($squa_lado) . " cm" . '</h2>';
+                                } elseif (isset($_REQUEST['enviar_circle'])) {
+                                    $cir_radio = $_REQUEST['radio'];
+                                    echo '<p class="text-white-50 mb-5">El área de un circulo con ' . $cir_radio . " cm de radio son:" . '</p>';
+                                    echo '<h2 class="fw-bold mb-2">' . calc_area_cir($cir_radio) . " cm" . '</h2>';
                                 }
                                 ?>
                                 <div>
@@ -59,27 +78,49 @@
     function ask_triangle()
     {
         echo '<form class="vh-100 gradient-custom" name="triangle_form" action="" method="post">
-                                    <div data-mdb-input-init class="form-outline form-white mb-4">
-                                        <input type="number" min="0.01" step="0.01" id="typeEmailX" class="form-control form-control-lg" name="base" placeholder="Base" required/>
-                                        <label class="form-label" for="typeEmailX">Base</label>
-                                    </div>
-                                    <div data-mdb-input-init class="form-outline form-white mb-4">
-                                        <input type="number" min="0.01" step="0.01" id="typePasswordX" class="form-control form-control-lg" name="altura" placeholder="Altura" required/>
-                                        <label class="form-label" for="typePasswordX">Altura</label>
-                                    </div>
-                                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit" name="enviar_tri">¡Calcular!</button>
-                                </div>
-                                <div>
+        <div data-mdb-input-init class="form-outline form-white mb-4">
+            <input type="number" min="0.01" step="0.01" id="typeEmailX" class="form-control form-control-lg" name="base" placeholder="Base" required />
+            <label class="form-label" for="typeEmailX">Base</label>
+        </div>
+        <div data-mdb-input-init class="form-outline form-white mb-4">
+            <input type="number" min="0.01" step="0.01" id="typePasswordX" class="form-control form-control-lg" name="altura" placeholder="Altura" required />
+            <label class="form-label" for="typePasswordX">Altura</label>
+        </div>
+        <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit" name="enviar_triangle">¡Calcular!</button>
+        </div>
+        <div>
 
-        </form>';
+    </form>';
+    }
+        function ask_figure_one_parameter($figura,$medida)
+    {
+        echo '<form class="vh-100 gradient-custom" name="'.$figura.'_form" action="" method="post">
+        <div data-mdb-input-init class="form-outline form-white mb-4">
+            <input type="number" min="0.01" step="0.01" id="typeEmailX" class="form-control form-control-lg" name="'.$medida.'" placeholder="'.ucfirst($medida).'" required />
+            <label class="form-label" for="typeEmailX">'.ucfirst($medida).'</label>
+        </div>
+        <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit" name="enviar_'.$figura.'">¡Calcular!</button>
+        </div>
+        <div>
+    </form>';
     }
     ?>
+
     <!-- Funciones para calculo -->
-     <?php 
-     function calc_area_tri($base,$altura){
-        return ($base*$altura)/2;
-     }
-     ?>
+    <?php
+    function calc_area_tri($base, $altura)
+    {
+        return ($base * $altura) / 2;
+    }
+    function calc_area_squ($lado)
+    {
+        return $lado**2;
+    }
+    function calc_area_cir($radio)
+    {
+        return number_format(($radio**2)*pi(),2);
+    }
+    ?>
 
 
     <!-- Enlace al archivo JavaScript de Bootstrap (y Popper.js si lo usas) -->

@@ -33,8 +33,7 @@
                                     $nota_uno = $_REQUEST['nota1'];
                                     $nota_dos = $_REQUEST['nota2'];
                                     $nota_tres = $_REQUEST['nota3'];
-                                    echo '<p class="text-white-50 mb-5">La nota media de las dos notas mas altas es: </p>';
-                                    echo '<h2 class="fw-bold mb-2">' . calc_nota_media_dos($nota_uno, $nota_dos, $nota_tres) . " puntos" . '</h2>';
+                                    round(calc_nota_media_dos($nota_uno, $nota_dos, $nota_tres),2);
                                 }
                                 ?>
                                 <div>
@@ -51,11 +50,15 @@
 
     <!-- Funcion para calculo -->
     <?php
-    function calc_nota_media_dos($nota1, $nota2, $nota3){
+    function calc_nota_media_dos($nota1, $nota2, $nota3)
+    {
         $array_notas = [$nota1, $nota2, $nota3];
         sort($array_notas);
         array_shift($array_notas);
-        return array_sum($array_notas) / count($array_notas);
+        echo "<p></p>";
+        echo '<p class="text-white-50 mb-5">Las notas mas altas son: </p>' . "<p>$array_notas[0] puntos</p>" . "<p>$array_notas[1] puntos</p>";
+        echo '<p class="text-white-50 mb-5">La nota media de las dos notas mas altas es: </p>';
+        echo '<h2 class="fw-bold mb-2">' . array_sum($array_notas) / count($array_notas) . " puntos" . '</h2>';
     }
     ?>
 

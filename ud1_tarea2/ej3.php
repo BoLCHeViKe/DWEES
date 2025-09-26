@@ -56,6 +56,7 @@
                                     $student = $_REQUEST['studient'] == 'si' ? true : false; //convertimos a boolean
                                     $big_fam = $_REQUEST['numfam'] == 'si' ? true : false;
                                     $unit_price_disc = calc_descuento($age, $student, $big_fam);
+                                    echo '<p class="text-white-50 mb-5">'."Teniendo $age años, ".strtoupper($_REQUEST['studient']). " siendo estudiante y ".strtoupper($_REQUEST['numfam']). " siendo familia numerosa, con el precio original del billete siendo de " . $_REQUEST['pricet'] .' € </p>';
                                     echo '<p class="text-white-50 mb-5">El precio del billete pagando el ' . ($unit_price_disc * 100) . '% es: </p>';
                                     echo '<h2 class="fw-bold mb-2">' . round($price * $unit_price_disc, 2) . " €" . '</h2>';
                                 }

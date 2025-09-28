@@ -19,7 +19,7 @@
     if (isset($_POST["enviar"])) {
         $salariob=$_POST["sb"];
         $num_hijos=$_POST["number_childs"];
-        echo "<p>Los impuestos a pagar teniendo </p><p>$num_hijos hijo/s </p><p>un salario bruto de $salariob € </p><p>son de: </p>";
+        echo "<p>Los impuestos a pagar teniendo </p><p>$num_hijos hijo/s </p><p>Y un salario bruto de $salariob € </p><p>Son de: </p>";
         $impuestos_totales=cal_impuestos($salariob, $num_hijos);
         echo "<p>".$impuestos_totales." € de impuestos</p>";
         echo "<p>".$salariob - $impuestos_totales." € salario Neto</p>";
@@ -62,10 +62,7 @@ function cal_impuestos($salario,$num_hijos){
         $impuestos_acu+=($salario - $tramo) * ($imp - (($num_hijos*$dto_hijo)>$dto_max_hijos?$dto_max_hijos:$num_hijos*$dto_hijo));
         $salario=$tramo;
     }
-
-
     return $impuestos_acu;
-
 }
 function descuento_hijos_max($descuento){
     return $descuento*10;

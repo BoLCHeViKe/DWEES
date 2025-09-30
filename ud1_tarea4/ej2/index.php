@@ -51,6 +51,3 @@ function valoracionSeguro($salud, $numAccidentes, $edad)
         return "Llamar a experto";
     }
 }
-?>
-<?php
-?>

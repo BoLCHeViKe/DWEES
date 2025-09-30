@@ -52,3 +52,5 @@ function valoracionSeguro($salud, $numAccidentes, $edad)
     }
 }
 ?>
+<?php
+?>

@@ -4,25 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculo Seguro</title>
+    <title>Numero Pi</title>
 </head>
 
 <body>
-    <h3>Seguros de salud</h3>
+    <h3>Aproximacion de Pi a N terminos</h3>
     <form action="" method="post">
-        <label for="edad">Introduzca su edad: </label>
-        <input type="number" id="edad" name="edad" min="0" step="1" required />
+        <label for="serie">Introduzca cuantos terminos de serie quiere calcular PI: </label>
+        <input type="number" id="serie" name="serie" min="0" step="1" required />
         <p></p>
-        <label for="acci">Introduzca los accidentes sufridos: </label>
-        <input type="number" id="acci" name="accidentes" min="0" step="1" required />
-        <p></p>
-        <label>Estado de salud: </label>
-        <input type="radio" id="salud_si" name="salud" value="sano" />
-        <label for="salud_si">Sano</label>
-        <input type="radio" id="salud_no" name="salud" value="enfermo" />
-        <label for="salud_no">Enfermo</label>
-        <p></p>
-        <button type="submit" name="calcular">Valoracion del seguro!</button>
+        <button type="submit" name="calcular">Calcular Pi!</button>
     </form>
 
 </body>
@@ -31,23 +22,16 @@
 
 <?php
 if (isset($_POST["calcular"])) {
-    $salud = $_POST["salud"];
-    $numAccidentes = $_POST["accidentes"];
-    $edad = $_POST["edad"];
-    echo "<p>Teniendo " . $edad . " años, estando " . $salud . ", y habiendo sufrido " . $numAccidentes . " Accidentes...</p>";
-    echo "<p>La decisión del seguro = " . valoracionSeguro($salud, $numAccidentes, $edad) . "</p>";
+    $n = $_POST["serie"];
+    echo "<p>El numero PI con " . $n . " terminos de serie es: </p>";
+    echo "<p>PI = " . calcPi($n) . "</p>";
 }
-
 ?>
 <?php
-
-function valoracionSeguro($salud, $numAccidentes, $edad)
-{
-    if ($salud == "sano" && $numAccidentes == 0) {
-        return $edad < 30 ? "Seguro tipo A" : "Seguro tipo B";
-    } elseif ($salud != "sano" && $numAccidentes != 0) {
-        return "No hacer seguro";
-    } else {
-        return "Llamar a experto";
+function calcPi($n){
+    $sumario=0;
+    for ($i=0; $i <=$n ; $i++) { 
+        $sumario+=pow(-1,$i)*(1/(2*$i+1));
     }
+    return 4*$sumario;
 }

@@ -36,8 +36,6 @@ if (isset($_POST["calcular"])) {
 <?php
 function calfuerzaAtraccion($m1,$m2,$r){
     return gravedad()*(($m1*$m2)/(pow($r,2)));
-
-
 }
 function gravedad(){
     return 6.67*(pow(10,-11));

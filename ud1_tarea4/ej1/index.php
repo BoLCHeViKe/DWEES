@@ -30,7 +30,7 @@ if (isset($_POST["calcular"])) {
     $n=$_POST["nvalor"];
     if ($m>=$n) {
         $resultado = factorial($m)/(factorial($n)*factorial(($m-$n)));
-        echo "<p>Siendo m=".$m."y n=".$n." : </p>";
+        echo "<p>Siendo m=".$m." y n=".$n." : </p>";
         echo "<p>Resultado = ".$resultado."</p>";
     }else {
         echo "<p>n (".$n.") no puede ser mayor que m!! (".$m.")</p>";

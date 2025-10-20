@@ -1,15 +1,15 @@
-<?php 
+<?php
+session_start(); //Arrancamos sesión
 include_once("crearConexion.php"); //Para utilizar crearConexion
+include_once("showHF.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Usuarios</title>
-</head>
-<body>
+<?php 
+    showHead("Seleccionar Factura");
+?>
+<!--Hasta aquí contenido compartido-->
+
+
     <h3>Menú crear usuarios</h3>
         <form action="" method="post">
         <label for="usuario">Nuevo nombre de usuario:</label>
@@ -63,19 +63,14 @@ include_once("crearConexion.php"); //Para utilizar crearConexion
         $dwes=null;
     }
 
-
-// // metodo para ver que se ha insertado todo bien
-// try {
-//     $resultado = $dwes->query($sql);
-//     echo "<p>Hemos insertado perfectamente al usuario</p>";
-// } catch (Exception $ex) {
-//     echo $ex;
-//     //throw $ex;
-// }
-
-
 ?>
-    
-</body>
-</html>
 
+
+<!--Reaunda el contenido compartido-->
+<?php 
+    include_once("./comp/botonVolver.php");
+?>
+
+<?php 
+    showFooter();
+?>

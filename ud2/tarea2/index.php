@@ -9,9 +9,10 @@ include_once("crearConexion.php"); //Para utilizar crearConexion
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprobar Users</title>
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
 </head>
 <body>
-        <h3>Menú Login (comprobar usuarios)</h3>
+        <h3>Menú Login</h3>
         <form action="" method="post">
         <label for="email">Email:</label>
         <input type="text" name="email" id="email" required placeholder="Indique aquí su el email"/>
@@ -28,12 +29,8 @@ include_once("crearConexion.php"); //Para utilizar crearConexion
 
         //Conexion
         $dwes=null;
-        try {
-            $dwes = crearConexionDBPdo();
-            // echo "<p>Hemos conseguido crear la conexion a la bd</p>";
-        } catch (Exception $ex) {
-            echo $ex->getMessage();
-        }
+        openDB($dwes,false);
+
         //Ejecuccion sentencia SELECT
         $sql="SELECT * FROM usuario WHERE email = '$email' AND pass = '$pass';";
         try {
@@ -54,8 +51,7 @@ include_once("crearConexion.php"); //Para utilizar crearConexion
         }
 
         //Cerramos conexion con la db
-        //echo "Cerramos conexion con la bd</p>";
-        $dwes=null;
+        closeDB($dwes,false);
     }
 ?>
     

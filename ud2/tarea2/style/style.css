@@ -1,0 +1,97 @@
+p.opendb,p.closedb,p.sentenok{
+    color: grey;
+    font-style: italic;
+}
+
+h3 {
+    font-size: 24px;
+    /* Tamaño del texto */
+    color: #333;
+    /* Color del texto (un gris oscuro) */
+    font-family: Arial, sans-serif;
+    /* Tipo de letra */
+    margin-top: 15px;
+    /* Margen superior */
+    margin-bottom: 10px;
+    /* Margen inferior */
+    border-bottom: 1px solid #ccc;
+    /* Una línea debajo del título */
+    padding-bottom: 5px;
+    /* Espacio entre el texto y la línea */
+    display: inline-block;
+}
+
+h4.saludodr {
+    /* Fondo en tonalidad azul celeste calmado (gradiente sutil) */
+    background: linear-gradient(90deg, #ADD8E6 0%, #B0E0E6 100%);
+    /* Azul claro a Azul Polvo */
+    color: #004080;
+    /* Azul marino oscuro para el texto (legibilidad) */
+    /* Relleno y bordes */
+    padding: 10px 20px;
+    border-radius: 4px;
+    /* Bordes menos redondeados, más profesional */
+    border: 1px solid #87CEFA;
+    /* Borde sutil, color cielo */
+    /* Sombra de caja muy sutil, para un aspecto limpio */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* Tipografía */
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    /* Fuentes profesionales y legibles */
+    font-size: 18px;
+    font-weight: 600;
+    /* Semi-negrita, legible pero no agresiva */
+    text-align: center;
+    /* Transición para el efecto hover */
+    display: inline-block;
+}
+
+table.mitabla {
+    border: 2px solid #000;
+    border-collapse: collapse;
+}
+
+table.mitabla th {
+    background-color: black;
+    color: white;
+}
+
+table.mitabla td {
+    background-color: rgb(233, 240, 253);
+
+}
+
+table.mitabla td,
+table.mitabla th {
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    border: 1px solid black;
+}
+
+button {
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 10px 20px 0;
+    border: 1px solid #ccc;
+    background: #eee;
+    border-radius: 8px 8px 8px 8px;
+}
+
+
+button:hover {
+    background: #daf0ff;
+}
+
+button#volver:hover {
+    background: #daffed;
+}
+
+button#logout:hover,
+button.eliminar:hover {
+    background: #fcc4c4;
+}

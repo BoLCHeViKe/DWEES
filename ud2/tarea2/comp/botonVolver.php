@@ -1,5 +1,5 @@
     <form action="" method="post">
-        <button type="submit" name="volver">Volver</button>
+        <button type="submit" id="volver" name="volver">Volver</button>
     </form>
 
     <?php
